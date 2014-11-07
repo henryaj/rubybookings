@@ -6,11 +6,8 @@ class Parser
   end
 
   def formatting_valid?(file)
-    if file.match(/[a-zA-Z]/)
-      false
-    else
-      true
-    end
+    # returns false if file contains any letters
+    file.match(/[a-zA-Z]/) ? false : true
   end
 
 end
