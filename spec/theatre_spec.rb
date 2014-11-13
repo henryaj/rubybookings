@@ -5,9 +5,9 @@ describe 'Theatre' do
   let(:theatre) { Theatre.new }
 
   it 'contains rows' do
-    expect(theatre.rows).to be_a(Hash)
-    theatre.rows.each do |key, value|
-      expect(value).to be_a(Row)
+    expect(theatre.rows).to be_an(Array)
+    theatre.rows.each do |row|
+      expect(row).to be_a(Row)
     end
   end
 
@@ -16,8 +16,8 @@ describe 'Theatre' do
   end
 
   it 'each row has its own id' do
-    theatre.rows.each do |key, value|
-      expect(key).to be_a(Fixnum)
+    theatre.rows.each do |row|
+      expect(row.id).to be_a(Fixnum)
     end
   end
 

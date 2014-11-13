@@ -10,7 +10,13 @@ describe 'Row' do
       expect(seat).to be_a(Seat)
     end
   end
-
+ 
+  it 'each seat has its own id' do
+    row.seats.each do |seat|
+      expect(seat.id).to be_a(Fixnum)
+    end
+  end
+ 
   it 'contains the correct number of seats' do
     expect(row.seats.count).to eq(Row::NUMBER_SEATS_PER_ROW)
   end
