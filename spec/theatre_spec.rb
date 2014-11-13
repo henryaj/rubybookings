@@ -7,7 +7,7 @@ describe 'Theatre' do
   it 'contains rows' do
     expect(theatre.rows).to be_an(Array)
     theatre.rows.each do |row|
-      expect(row.class).to eq(Row)
+      expect(row).to be_a(Row)
     end
   end
 
