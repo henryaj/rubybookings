@@ -28,7 +28,7 @@ class Parser
       end_seat    = line[4]
 
       # append to array
-      @bookings << [id, start_row, start_seat, end_row, end_seat]
+      @bookings << {id: id, start_row: start_row, start_seat: start_seat, end_row: end_row, end_seat: end_seat}
     end
   end
 

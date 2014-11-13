@@ -4,7 +4,11 @@ describe 'Parser' do
   
   let(:parser) { Parser.new }
 
-  expected_bookings_array = [["0", "89", "13", "89", "13"], ["1", "67", "44", "67", "47"], ["2", "33", "46", "33", "47"]]
+  expected_bookings_array = [
+    {:id=>"0", :start_row=>"89", :start_seat=>"13", :end_row=>"89", :end_seat=>"13"},
+    {:id=>"1", :start_row=>"67", :start_seat=>"44", :end_row=>"67", :end_seat=>"47"},
+    {:id=>"2", :start_row=>"33", :start_seat=>"46", :end_row=>"33", :end_seat=>"47"}
+  ]
 
   context 'reading text files' do
     it 'can open a text file' do
