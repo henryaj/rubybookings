@@ -2,11 +2,15 @@ class Theatre
 
   attr_reader :rows
 
-  NUMBER_OF_ROWS = 100
+  NUMBER_OF_ROWS = 1
 
   def initialize
-    @rows = []
-    NUMBER_OF_ROWS.times { @rows << Row.new }
+    @rows = {}
+    rownumber = 0
+    NUMBER_OF_ROWS.times do
+      @rows[rownumber] = Row.new
+      rownumber += 1
+    end
   end
 
 end

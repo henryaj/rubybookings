@@ -15,7 +15,10 @@ describe 'Row' do
     expect(row.seats.count).to eq(Row::NUMBER_SEATS_PER_ROW)
   end
 
-  it 'knows when it is full'
+  xit 'knows when it is full' do
+    row.seats.each { |seat| seat.book! }
+    expect(row.booked?).to be true
+  end
 
   xit 'knows when it only has single seats remaining'
 

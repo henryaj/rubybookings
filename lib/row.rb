@@ -9,4 +9,5 @@ class Row
     NUMBER_SEATS_PER_ROW.times { @seats << Seat.new }
   end
 
+  
 end
