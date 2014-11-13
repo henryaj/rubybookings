@@ -1,7 +1,7 @@
 class Row
 
   attr_accessor :id
-  attr_reader :seats
+  attr_accessor :seats
 
   NUMBER_SEATS_PER_ROW = 50
 
@@ -15,6 +15,14 @@ class Row
       @seats << seat
       seatnumber += 1
     end
+  end
+
+  def booked?
+    seats.all? {|seat| seat.booked? }
+  end
+
+  def only_single_seats?
+
   end
   
 end
