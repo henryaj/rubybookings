@@ -18,14 +18,17 @@ class Parser
     @contents.each_line do |line|
       # strip leading '(' and trailing '),'
       line[-1,1] == ',' ? line = line[1..-3] : line = line[1..-2]
-      id = line.match(/\d+/).to_s
-      puts "And the id is"
-      puts id
-      # get start row and seat number
-      start_row = line[]
-      # get end row and seat number
+      # convert line to an array
+      line = line.scan(/\d+/)
+
+      id          = line[0]
+      start_row   = line[1]
+      start_seat  = line[2]
+      end_row     = line[3]
+      end_seat    = line[4]
+
       # append to array
-      # @bookings << [id, start_row, start_seat, end_row, end_seat]
+      @bookings << [id, start_row, start_seat, end_row, end_seat]
     end
   end
 
